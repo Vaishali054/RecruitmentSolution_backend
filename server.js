@@ -2,7 +2,7 @@ const express=require('express')
 const app=express()
 
 const cors = require('cors');
-const jwt = require('jsonwebtoken');
+// const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const mongoose=require('mongoose')
 const User=require("./db/user");
@@ -71,7 +71,7 @@ app.post('/api/login', async (req, res) => {
       return res.status(401).json({ message: 'Invalid password.' });
     }
     // Generate a token
-  const token = jwt.sign({ userId: user.id }, 'secretKey', { expiresIn: '2h' });
+  // const token = jwt.sign({ userId: user.id }, 'secretKey', { expiresIn: '2h' });
 
   // Set the token as a cookie (Note: Use secure: true in production for HTTPS)
   // res.cookie('token', token, { httpOnly: true });
