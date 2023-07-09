@@ -13,7 +13,7 @@ dotenv.config()
 const saltRounds = 10; // Number of salt rounds for bcrypt
 
 const corsOptions = {
-  origin: "https://recruitment-solution-frontend-rdls6f599-vaishali054.vercel.app", // frontend URI (ReactJS)
+  origin: "https://recruitment-solution-frontend-rdls6f599-vaishali054.vercel.app/", // frontend URI (ReactJS)
 }
 app.use(cors(corsOptions));
 app.use(express.json())
@@ -82,7 +82,7 @@ app.post('/api/login', async (req, res) => {
   // Successful login
   
     return res.status(200)
-    .cookie('token', token, { httpOnly: false})
+    // .cookie('token', token, { httpOnly: false})
     .json({user})
   } catch (error) {
     console.error(error);
